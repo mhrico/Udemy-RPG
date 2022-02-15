@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b73406e73a1d5047ba1f232a3ff59db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: Suvo
+  charName: Jelane
   playerLevel: 1
   currentEXP: 0
   baseEXP: 1000
@@ -233,3 +233,6 @@ MonoBehaviour:
   - {fileID: 5690754376084837325}
   - {fileID: 7386696341885365131}
   - {fileID: 5180313127280565550}
+  gameMenuOpen: 0
+  dialogActive: 0
+  fadingActive: 0

@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essential Loaders
       objectReference: {fileID: 0}
+    - target: {fileID: 6544963266644298459, guid: 558070ef6214d424b8952884f6d77c3e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 558070ef6214d424b8952884f6d77c3e, type: 3}
 --- !u!1 &648286983

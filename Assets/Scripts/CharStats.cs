@@ -31,6 +31,11 @@ public class CharStats : MonoBehaviour
     {
         expToNextLevel = new int[maxLevel];
         mpLevelBonus = new int[maxLevel];
+        for(int i = 1; i < mpLevelBonus.Length; i++)
+        {
+            mpLevelBonus[i] = mpLevelBonus[i - 1] + 10;
+        }
+
         expToNextLevel[1] = baseEXP;
         for(int i = 2; i < expToNextLevel.Length; i++)
         {
@@ -56,7 +61,7 @@ public class CharStats : MonoBehaviour
             if(currentEXP > expToNextLevel[playerLevel])
             {
                 currentEXP -= expToNextLevel[playerLevel];
-                playerLevel++;
+                
 
                 if(playerLevel % 2 == 0)
                 {
@@ -72,6 +77,7 @@ public class CharStats : MonoBehaviour
 
                 maxMP += mpLevelBonus[playerLevel];
                 currentMP = maxMP;
+                playerLevel++;
 
             }
 
