@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameMenu : MonoBehaviour
 {
     public GameObject theMenu;
+    public GameObject[] windows;
 
     private CharStats[] playerStats;
 
@@ -13,6 +14,7 @@ public class GameMenu : MonoBehaviour
     public Slider[] expSlider;
     public Image[] characterImage;
     public GameObject[] charStatHolder;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +29,9 @@ public class GameMenu : MonoBehaviour
         {
             if(theMenu.activeInHierarchy)
             {
-                theMenu.SetActive(false);
-                GameManager.instance.gameMenuOpen = false;
+                //theMenu.SetActive(false);
+                //GameManager.instance.gameMenuOpen = false;
+                CloseMenu();
             }
             else
             {
@@ -63,5 +66,31 @@ public class GameMenu : MonoBehaviour
                 charStatHolder[i].SetActive(false);
             }
         }
+    }
+
+    public void ToggleWindow(int windowNumber)
+    {
+        for(int i = 0; i < windows.Length; i++)
+        {
+            if(i == windowNumber)
+            {
+                Debug.Log(i);
+                windows[i].SetActive(!windows[i].activeInHierarchy);
+            }
+            else
+            {
+                windows[i].SetActive(false);
+            }
+        }
+    }
+
+    public void CloseMenu()
+    {
+        for(int i = 0; i < windows.Length; i++)
+        {
+            windows[i].SetActive(false);
+        }
+        theMenu.SetActive(false);
+        GameManager.instance.gameMenuOpen = false;
     }
 }
