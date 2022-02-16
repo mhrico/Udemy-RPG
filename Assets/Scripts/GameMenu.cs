@@ -48,6 +48,8 @@ public class GameMenu : MonoBehaviour
             if(playerStats[i].gameObject.activeInHierarchy)
             {
                 charStatHolder[i].SetActive(true);
+                nameText[i].text = playerStats[i].charName;
+                hpText[i].text = "HP: " + playerStats[i].currentHP + "/" + playerStats[i].maxHP;
             }
             else
             {
