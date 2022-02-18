@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
 
     public bool gameMenuOpen, dialogActive, fadingActive;
 
+    public string[] itemHeld;
+    public int[] numberOfItem;
+    public Item[] referenceItem;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,5 +40,17 @@ public class GameManager : MonoBehaviour
             PlayerController.instance.canMove = true;
 
         }
+    }
+
+    public Item GetItemDetails(string itemToGrab)
+    {
+        for (int i = 0; i < referenceItem.Length; i++)
+        {
+            if (referenceItem[i].itemName == itemToGrab)
+            {
+                return referenceItem[i];
+            }
+        }
+        return null;
     }
 }
