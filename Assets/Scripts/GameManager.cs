@@ -53,4 +53,30 @@ public class GameManager : MonoBehaviour
         }
         return null;
     }
+
+    public void SortItems()
+    {
+        bool itemAfterSpace = true;
+        while (itemAfterSpace)
+        {
+            itemAfterSpace = false;
+            for (int i = 0; i < itemHeld.Length-1; i++)
+            {
+            
+                if(itemHeld[i] == "")
+                {
+                    itemHeld[i] = itemHeld[i + 1];
+                    itemHeld[i + 1] = "";
+
+                    numberOfItem[i] = numberOfItem[i + 1];
+                    numberOfItem[i + 1] = 0;
+
+                    if(itemHeld[i] != "")
+                    {
+                        itemAfterSpace = true;
+                    }
+                }
+            }
+        }
+    }
 }
